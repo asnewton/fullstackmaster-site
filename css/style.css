@@ -199,11 +199,13 @@ body {
 
 .img-container img{
     margin-top: 100px;
+    animation: slideInFromRight 0.5s ease-in;
 }
 
 .random-subheader-text {
     margin-top:100px;
     padding-top: 100px;
+    animation: slideInFromLeft 0.5s ease-in;
 }
  
 .random-text:after {
@@ -212,7 +214,7 @@ body {
 }
 
 .random-text {
-    font-size: 50px;
+    font-size: 3rem;
      color: var(--primary-color);
     letter-spacing: normal;
      animation: animateText 3s linear   infinite;
@@ -221,13 +223,13 @@ body {
 
 .random-subheader-text h4 {
     color: #fff;
-    font-size: 38px;
+    font-size: 2rem;
     letter-spacing: normal;
 }
 
 .random-subheader-text p {
     color: #adb5bd;
-    font-size: 20px;
+    font-size: 1.2rem;
     letter-spacing: normal;
 }
 
@@ -235,6 +237,11 @@ body {
     transform: scale(1.1);
     transition: .2s linear;
 }
+
+ 
+
+
+/* Animations */
 
 @keyframes animateText {
     0% {
@@ -250,6 +257,25 @@ body {
     }
 } 
 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+ 
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
 
 /* Buttons */
 
@@ -257,3 +283,29 @@ body {
     background-color: var(--primary-color) !important;
 }
 
+
+@media (max-width:1200px) { 
+    .random-text { 
+        font-size: 2.8rem;
+         white-space: pre-wrap;
+    }
+}
+
+
+/* Media queries for tablet */
+
+@media (max-width:768px) {
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .flex {
+         flex-direction: column;
+         align-items: center;
+    } 
+
+    .random-text { 
+         white-space: pre-wrap;
+    }
+}
